@@ -1,4 +1,29 @@
 
 <p>Información de Miembros</p>
 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
+    <ng-container matColumnDef="name1">
+        <th mat-header-cell *matHeaderCellDef> Nombres </th>
+        <td mat-cell *matCellDef="let element"> {{element.name1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="alias">
+        <th mat-header-cell *matHeaderCellDef> Alias </th>
+        <td mat-cell *matCellDef="let element"> {{element.alias}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="telephone">
+        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+        <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+    </ng-container>  
+    
+    <ng-container matColumnDef="dateentry">
+        <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateentry}} </td>
+    </ng-container> 
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>    
