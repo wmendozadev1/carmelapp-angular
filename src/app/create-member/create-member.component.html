@@ -1,0 +1,25 @@
+
+<mat-card>
+    <span>Crear nuevo Miembro</span>
+    <form [formGroup]="memberForm" (ngSubmit)= "onSubmit()" >
+
+        <mat-form-field class="create-member-field">
+            <input matInput placeholder="Primer Nombre" formControlName="name1">
+        </mat-form-field>
+
+        <mat-form-field class="create-member-field">
+            <input matInput placeholder="Segundo Nombre" formControlName="name2">
+        </mat-form-field>
+
+        <mat-form-field class="create-member-field">
+            <input matInput placeholder="Alias" formControlName="alias">
+        </mat-form-field>
+        
+        <mat-form-field class="create-member-field">
+            <input matInput placeholder="Teléfono" formControlName="telephone">
+        </mat-form-field>     
+        
+        <button mat-raised-button [disabled]="!memberForm.valid" >Crear Nuevo</button>
+        
+    </form>
+</mat-card>
