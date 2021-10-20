@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
+import { MemberService } from '../member.service';
 
 @Component({
   selector: 'app-create-member',
@@ -8,7 +12,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateMemberComponent  { // implements OnInit
 
-  constructor() { }
+  constructor(private apiMember: MemberService,
+              private router: Router) { }
 
   /*ngOnInit(): void {
   }*/
@@ -22,6 +27,10 @@ export class CreateMemberComponent  { // implements OnInit
 
   onSubmit() {
     console.log(this.memberForm.value);
+    this.apiMember.createMember(this.memberForm.value).subscribe((data:any)=> {
+        alert("Miembro creado");
+        this.router.navigate(['/members']);
+    });
   }
 
 

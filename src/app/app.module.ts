@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { MembersComponent } from './members/members.component';
@@ -17,6 +18,7 @@ import { MemberService } from './member.service';
 
 import { AppRouterModule } from './app-router.module';
 import { CreateMemberComponent } from './create-member/create-member.component';
+import { UpdateMemberComponent } from './update-member/update-member.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { CreateMemberComponent } from './create-member/create-member.component';
     MembersComponent,
     FooterComponent,
     HeaderComponent,
-    CreateMemberComponent
+    CreateMemberComponent,
+    UpdateMemberComponent
   ],
   imports: [
     BrowserModule, AppRouterModule,HttpClientModule, BrowserAnimationsModule,
     MatButtonModule,MatTableModule,ReactiveFormsModule,MatInputModule,MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,MatDialogModule
   ],
+  entryComponents:[UpdateMemberComponent],
   providers: [
     MemberService
   ],
